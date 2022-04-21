@@ -1,0 +1,29 @@
+[build]
+  command = "npm run build"
+  publish = "public"
+[build.environment]
+  VUE_APP_INFURA_ID = "6dccc3daffad46d280f872d4a73721e1"
+  FAUNADB_SERVER_SECRET = "fnAESiNtj_ACQAVh6pM8vECd16tCQka6SQqH6Fwu"
+  ALCHEMY_SECRET = "ihOBDG_dRc85G3mbQvLDpbWm-fXn8UCq"
+  NFT_CONTRACT_ADDRESS = '0x0253D4Cf2049a5E0D9f99706074DCe5E7F296e52'
+[functions]
+  directory = "functions-build"
+  node_bundler = "esbuild"
+[[plugins]]
+package = "@netlify/plugin-functions-install-core"  
+
+[[redirects]]
+  from = "/json/pepes/*"
+  to = "/json/pepes/"
+  status = 200
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[headers]]
+  # Define which paths this specific [[headers]] block will cover.
+  for = "/*"
+    [headers.values]
+    Access-Control-Allow-Origin = "*"  

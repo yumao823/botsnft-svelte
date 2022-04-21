@@ -1,0 +1,21 @@
+npm install nodemon-webpack-plugin --save-dev && npm install --save-dev @tsconfig/svelte typescript svelte-preprocess svelte-check
+
+npm i
+
+npm run dev
+
+git pull
+
+git add --all
+
+git commit -m 'put whatever you did here'
+
+git push
+
+
+make new branch in git
+            git checkout -b {name of new branch here}
+switch to existing branch
+            git checkout {existing branch}
+switch to previous branch
+            git checkout -
